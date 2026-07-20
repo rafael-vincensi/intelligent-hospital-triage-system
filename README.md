@@ -81,6 +81,8 @@ O projeto Triagem Inteligente foi desenvolvido para apoiar o processo de triagem
 ### Bot Telegram
 
 * Pré-triagem remota
+* Ativação por token fornecido pelo hospital
+* Vinculação do Telegram ao cadastro do paciente
 * Coleta de dados do paciente
 * Envio automático para o sistema
 * Geração de protocolo de atendimento
