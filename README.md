@@ -46,42 +46,46 @@ O projeto Triagem Inteligente foi desenvolvido para apoiar o processo de triagem
 ### Classificação Inteligente
 
 * Vermelho (Emergência)
-* Amarelo (Urgência)
-* Verde (Consulta)
+* Laranja (Muito urgente)
+* Amarelo (Urgente)
+* Verde (Pouco Urgente)
+* Azul (Não Urgente)
 
 ### Gestão da Fila
 
-* Ordenação automática por prioridade.
-* Controle de tempo de espera.
-* Atualização de status do atendimento.
-* Busca de pacientes.
+* Ordenação automática por prioridade
+* Controle de tempo de espera
+* Atualização de status do atendimento
+* Busca de pacientes
 
 ### Histórico
 
-* Registro dos atendimentos realizados.
-* Consulta de pacientes finalizados.
+* Registro dos atendimentos realizados
+* Consulta de pacientes finalizados
 
 ### Detalhes do Paciente
 
-* Dados completos.
-* Sintomas informados.
-* Encaminhamento sugerido.
-* Observações da equipe.
+* Dados completos
+* Sintomas informados
+* Encaminhamento sugerido
+* Observações da equipe
 
 ### Inteligência Artificial
 
-* Modelo local executado via Ollama.
-* Classificação utilizando Mistral.
-* Busca semântica com ChromaDB.
-* Arquitetura RAG (Retrieval-Augmented Generation).
-* Base de conhecimento clínica personalizada.
+* Modelo local executado via Ollama
+* Classificação utilizando Mistral
+* Busca semântica com ChromaDB
+* Arquitetura RAG (Retrieval-Augmented Generation)
+* Base de conhecimento clínica personalizada
 
 ### Bot Telegram
 
-* Pré-triagem remota.
-* Coleta de dados do paciente.
-* Envio automático para o sistema.
-* Geração de protocolo de atendimento.
+* Pré-triagem remota
+* Coleta de dados do paciente
+* Envio automático para o sistema
+* Geração de protocolo de atendimento
+* Tira dúvidas
+* Informação sobre triagem
 
 ---
 ## 📷 Demonstração
@@ -229,7 +233,7 @@ triagem-inteligente/
 ### 1. Clonar o repositório
 ```
 bash
-git clone https://github.com/rafael-vincensi/triagem-inteligente.git
+git clone https://github.com/rafael-vincensi/ia-triagem-inteligente.git
 
 ```
 ### 2. Backend
