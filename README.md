@@ -1,6 +1,12 @@
-# 🏥 Triagem Inteligente
+# 🏥 Intelligent Hospital Triage System
 
-Sistema inteligente de apoio à triagem hospitalar desenvolvido como Projeto Integrador do curso de Ciência da Computação.
+AI-powered hospital triage support system designed to assist healthcare professionals in patient risk classification, queue management and patient flow organization.
+
+The system uses Artificial Intelligence to analyze patient symptoms and suggest risk classifications based on the Manchester Triage System guidelines.
+
+It provides a web platform for healthcare professionals and a Telegram chatbot that allows patients to perform remote pre-triage after account activation.
+
+The final decision remains under the responsibility of healthcare professionals, who can review and modify the classification suggested by the AI.
 
 ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
@@ -8,240 +14,240 @@ Sistema inteligente de apoio à triagem hospitalar desenvolvido como Projeto Int
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
 ![Ollama](https://img.shields.io/badge/Ollama-000000)
 ![Mistral](https://img.shields.io/badge/Mistral-AI-orange)
-
-O sistema auxilia profissionais de saúde na classificação inicial de pacientes por meio de Inteligência Artificial, organizando automaticamente a fila de atendimento conforme a prioridade clínica identificada.
-
----
-
-## 📌 Problema
-
-Em ambientes hospitalares com alta demanda, pacientes com diferentes níveis de gravidade frequentemente aguardam atendimento em uma mesma fila. Esse cenário pode aumentar o tempo de resposta para casos críticos e dificultar a gestão do fluxo de pacientes.
-
-O projeto Triagem Inteligente foi desenvolvido para apoiar o processo de triagem, classificação de risco e organização da fila de atendimento.
+![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20Database-purple)
 
 ---
 
-## 🎯 Objetivos
+# 📌 About the Project
 
-* Realizar o cadastro de pacientes.
-* Registrar sintomas e informações básicas.
-* Classificar automaticamente o nível de prioridade.
-* Organizar a fila conforme a urgência do atendimento.
-* Permitir acompanhamento do tempo de espera.
-* Gerenciar status e observações dos pacientes.
-* Utilizar Inteligência Artificial como ferramenta de apoio à classificação.
-* Disponibilizar pré-triagem remota por meio de chatbot.
+In high-demand healthcare environments, correctly identifying patient priority levels is essential to ensure that critical cases receive appropriate attention.
+
+The Intelligent Hospital Triage System was developed as a support tool for healthcare professionals responsible for patient triage.
+
+The platform centralizes patient information, manages the hospital queue and uses Artificial Intelligence to analyze reported symptoms and suggest risk classifications.
 
 ---
 
-## ⚙️ Funcionalidades
+# ⚙️ Features
 
-### Cadastro de Pacientes
-
-* Nome
-* Idade
-* Telefone
-* Sintomas
-
-### Classificação Inteligente
-
-* Vermelho (Emergência)
-* Laranja (Muito urgente)
-* Amarelo (Urgente)
-* Verde (Pouco Urgente)
-* Azul (Não Urgente)
-
-### Gestão da Fila
-
-* Ordenação automática por prioridade
-* Controle de tempo de espera
-* Atualização de status do atendimento
-* Busca de pacientes
-
-### Histórico
-
-* Registro dos atendimentos realizados
-* Consulta de pacientes finalizados
-
-### Detalhes do Paciente
-
-* Dados completos
-* Sintomas informados
-* Encaminhamento sugerido
-* Observações da equipe
-
-### Inteligência Artificial
-
-* Modelo local executado via Ollama
-* Classificação utilizando Mistral
-* Busca semântica com ChromaDB
-* Arquitetura RAG (Retrieval-Augmented Generation)
-* Base de conhecimento clínica personalizada
-
-### Bot Telegram
-
-* Pré-triagem remota
-* Ativação por token fornecido pelo hospital
-* Vinculação do Telegram ao cadastro do paciente
-* Coleta de dados do paciente
-* Envio automático para o sistema
-* Geração de protocolo de atendimento
-* Tira dúvidas
-* Informação sobre triagem
-
----
-## 📷 Demonstração
-
-### Login
-
-![Login](assets/screenshots/login.png)
+## 🖥️ Web Application
 
 ### Dashboard
 
+- Overview of current appointments and patient flow.
+- Summary information about active patients.
+
+### Patient Management
+
+- Patient registration.
+- Patient search.
+- Patient filtering.
+- Active patient visualization.
+- Appointment status management:
+  - Waiting
+  - In treatment
+  - Completed
+
+### Patient Details
+
+The system provides:
+
+- Patient information.
+- Age.
+- Phone number.
+- Telegram activation status.
+- Risk classification.
+- Reported symptoms.
+- AI-generated classification explanation.
+- Professional notes.
+
+Healthcare professionals can manually modify patient classification and status when necessary.
+
+---
+
+# 🩺 Triage Process
+
+The triage process can be performed through the web application or the Telegram chatbot.
+
+Workflow:
+
+1. Patient reports symptoms.
+2. Information is sent to the backend API.
+3. The AI pipeline analyzes the provided data.
+4. A risk classification is suggested.
+5. The patient is automatically added to the waiting queue.
+
+Risk classifications:
+
+- 🔴 Red — Emergency
+- 🟠 Orange — Very Urgent
+- 🟡 Yellow — Urgent
+- 🟢 Green — Less Urgent
+- 🔵 Blue — Non Urgent
+
+---
+
+# 🤖 Telegram Chatbot
+
+The chatbot allows patients to perform remote pre-triage.
+
+To activate the chatbot, the patient must complete an initial registration process and receive an activation token linked to their account.
+
+After activation, patients can:
+
+- Request new triage assessments.
+- Report symptoms through Telegram.
+- Receive AI-generated risk classification.
+- Check appointment information.
+- Ask health-related questions.
+
+All chatbot-based triages are automatically sent to the web system.
+
+---
+
+# 🧠 Artificial Intelligence
+
+The risk classification pipeline uses a Retrieval-Augmented Generation (RAG) architecture.
+
+Workflow:
+
+```
+Patient symptoms
+        |
+        ↓
+Semantic search
+        |
+        ↓
+Context retrieval from ChromaDB
+        |
+        ↓
+Mistral model execution via Ollama
+        |
+        ↓
+Risk classification + explanation
+        |
+        ↓
+System update
+```
+
+Technologies used:
+
+- **Ollama** - Local execution of language models.
+- **Mistral** - Large Language Model used for classification.
+- **ChromaDB** - Vector database for semantic retrieval.
+- **RAG** - Retrieval-Augmented Generation architecture.
+
+---
+
+# 📷 Screenshots
+
+## Login
+
+![Login](assets/screenshots/login.png)
+
+## Dashboard
+
 ![Dashboard](assets/screenshots/dashboard.png)
 
-### Pacientes no momento
+## Patients
 
-![Pacientes](assets/screenshots/pacientes.png)
+![Patients](assets/screenshots/pacientes.png)
 
-### Nova triagem
+## New Triage
 
-![Cadastro](assets/screenshots/nova-triagem.png)
+![New Triage](assets/screenshots/nova-triagem.png)
 
-### Histórico de Pacientes
+## History
 
-![Historico](assets/screenshots/historico.png)
+![History](assets/screenshots/historico.png)
 
-### Detalhes do Paciente
+## Patient Details
 
-![Info](assets/screenshots/paciente-info.png)
+![Patient Details](assets/screenshots/paciente-info.png)
 
-### Chatbot
+## Telegram Bot
 
-![Bot](assets/screenshots/bot-1.png)
-![Bot](assets/screenshots/bot-2.png)
+![Telegram Bot](assets/screenshots/bot-1.png)
+
+![Telegram Bot](assets/screenshots/bot-2.png)
 
 ---
 
-## 🏗️ Arquitetura do Projeto
+# 🏗️ Architecture
 
-```text
-Paciente
-   ├── Site (React)
-   └── Telegram Bot
-
-            ↓
-
-         FastAPI
-
-            ↓
-
-     ChromaDB + Mistral
-
-            ↓
-
-       PostgreSQL
-
-            ↓
-
-      Fila Hospitalar
+```
+                         Patient
+                            |
+             ------------------------------
+             |                            |
+      Web Application              Telegram Bot
+             |                            |
+             ----------- FastAPI ----------
+                            |
+             ------------------------------
+             |                            |
+        PostgreSQL                  AI Pipeline
+                                        |
+                         -------------------------
+                         |                       |
+                    ChromaDB                 Mistral
 ```
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+# 🛠️ Technologies
 
-### Frontend
+## Frontend
 
-* React
-* Vite
-* JavaScript
-* CSS
+- React
+- Vite
+- JavaScript
+- CSS
 
-### Backend
+## Backend
 
-* Python
-* FastAPI
-* SQLAlchemy
-* Pydantic
+- Python
+- FastAPI
+- SQLAlchemy
+- Pydantic
 
-### Banco de Dados
+## Database
 
-* PostgreSQL
+- PostgreSQL
 
-### Inteligência Artificial
+## Artificial Intelligence
 
-* Ollama
-* Mistral
-* ChromaDB
-* RAG (Retrieval-Augmented Generation)
+- Ollama
+- Mistral
+- ChromaDB
+- RAG
 
-### Integrações
+## Integrations
 
-* Telegram Bot API
+- Telegram Bot API
 
-### Ferramentas
+## Tools
 
-* VS Code
-* DBeaver
-* Git
-* GitHub
+- Git
+- GitHub
+- VS Code
+- DBeaver
+
+# 🚀 How to Run
+
+## 1. Clone the repository
+
+```bash
+git clone https://github.com/rafael-vincensi/hospital-triage-system.git
+
+cd hospital-triage-system
+```
 
 ---
 
-## 📂 Estrutura do Projeto
+## 2. Backend
 
-```text
-triagem-inteligente/
-
-├── ai/
-│   ├── telegram_bot/
-│   │   ├── bot.py
-│   │   └── .env.example
-│   │
-│   ├── tests/
-│   │   ├── test_rag.py
-│   │   ├── teste_classificador.py
-│   │   ├── teste_dataset.py
-│   │   └── teste_ia.py
-│   │
-│   ├── classificador.py
-│   ├── knowledge_base.py
-│   ├── rag_classifier.py
-│   └── semantic_search.py
-│
-├── backend/
-│   ├── main.py
-│   ├── models.py
-│   ├── database.py
-│   ├── requirements.txt
-│   └── .env.example
-│
-├── dataset/
-│   └── casos_triagem.json
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   └── package.json
-│
-├── README.md
-└── LICENSE
-```
-
-
-## 🚀 Como Executar
-
-### 1. Clonar o repositório
-```
-bash
-git clone https://github.com/rafael-vincensi/ia-triagem-inteligente.git
-
-```
-### 2. Backend
-
-```
-bash
+```bash
 cd backend
 
 pip install -r requirements.txt
@@ -249,21 +255,21 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-Servidor:
+API:
 
-```text
+```
 http://127.0.0.1:8000
 ```
 
-Documentação:
+Documentation:
 
-```text
+```
 http://127.0.0.1:8000/docs
 ```
 
 ---
 
-### 3. Frontend
+## 3. Frontend
 
 ```bash
 cd frontend
@@ -273,29 +279,23 @@ npm install
 npm run dev
 ```
 
-Aplicação:
+Application:
 
-```text
+```
 http://localhost:5173
 ```
 
 ---
 
-### 4. Inteligência Artificial
+## 4. Artificial Intelligence
 
-Instalar Ollama:
+Install the model:
 
 ```bash
 ollama pull mistral
 ```
 
-Executar modelo:
-
-```bash
-ollama run mistral
-```
-
-Criar base vetorial:
+Create the vector database:
 
 ```bash
 cd ai
@@ -305,15 +305,15 @@ python knowledge_base.py
 
 ---
 
-### 5. Bot Telegram
+## 5. Telegram Bot
 
-Configurar o token no arquivo `.env`:
+Configure the bot token:
 
 ```env
-BOT_TOKEN=SEU_TOKEN
+BOT_TOKEN=YOUR_TOKEN
 ```
 
-Executar:
+Run:
 
 ```bash
 cd ai/telegram_bot
@@ -323,30 +323,17 @@ python bot.py
 
 ---
 
-## 🔄 Fluxo de Funcionamento
+# 🔮 Future Improvements
 
-1. O paciente informa seus dados e sintomas.
-2. Os sintomas são enviados ao backend.
-3. O ChromaDB busca casos semelhantes na base de conhecimento.
-4. O modelo Mistral realiza a classificação.
-5. O sistema define prioridade e encaminhamento.
-6. O paciente é inserido automaticamente na fila.
-7. A equipe acompanha o atendimento pelo painel web.
-
----
-
-## 🔮 Melhorias Futuras
-
-* Dashboard com indicadores hospitalares em tempo real.
-* Controle de usuários e permissões.
-* Histórico de alterações clínicas.
-* Integração com WhatsApp Business.
-* Utilização de BioBERT para embeddings clínicos especializados.
-* Relatórios gerenciais e estatísticos.
-* Implantação em ambiente cloud.
+- User authentication and permission management.
+- Hospital analytics dashboard.
+- Complete patient history tracking.
+- Integration with additional communication channels.
+- Improvements to AI models and clinical embeddings.
+- Cloud deployment.
 
 ---
 
-## 👨‍💻 Autor
+# 👨‍💻 Author
 
 **Rafael Vincensi de Miranda**
